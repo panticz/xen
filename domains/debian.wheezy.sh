@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # configure domU
 DOMAIN_NAME=wheezy
 DOMAIN_MAC=00:10:01:01:aa:bb
