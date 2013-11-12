@@ -7,12 +7,21 @@ DOMAIN_RAM=2Gb
 DOMAIN_HDD=8Gb
  
 # create domU on LVM (for image file use --dir=/root)
-xen-create-image --hostname=${DOMAIN_NAME} \
---dist=wheezy --lvm=vg0 --size=${DOMAIN_HDD} --fs=ext4 --role=udev \
---memory=${DOMAIN_RAM} --swap=${DOMAIN_RAM} \
---dhcp --mac=${DOMAIN_MAC} --genpass=0 --password=t00r \
---apt_proxy=http://apt-cacher:3142/ \
---vcpus $(cat /proc/cpuinfo | grep processor | wc -l)
+xen-create-image \
+ --hostname=${DOMAIN_NAME} \
+ --dist=wheezy \
+ --lvm=vg0 \
+ --size=${DOMAIN_HDD} \
+ --fs=ext4 \
+ --role=udev \
+ --memory=${DOMAIN_RAM} \
+ --swap=${DOMAIN_RAM} \
+ --dhcp \
+ --mac=${DOMAIN_MAC} \
+ --genpass=0 \
+ --password=t00r \
+ --apt_proxy=http://apt-cacher:3142/ \
+ --vcpus $(cat /proc/cpuinfo | grep processor | wc -l)
  
 # rename vm config
 mv /etc/xen/${DOMAIN_NAME}.cfg /etc/xen/${DOMAIN_NAME}
