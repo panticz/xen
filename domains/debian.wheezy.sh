@@ -35,6 +35,11 @@ xm create -c ${DOMAIN_NAME}
 # disable pc speaker
 echo 'blacklist snd-pcsp' >> /etc/modprobe.d/blacklist.conf
 
+# check for updates
+if [ $(cat /etc/apt/apt.conf.d/10periodic | grep -c Update-Package-Lists) -eq 0 ]; then
+ echo 'APT::Periodic::Update-Package-Lists "1";' >> /etc/apt/apt.conf.d/10periodic
+fi
+
 # fix FQDN
 sed -i "s|$(hostname) $(hostname)|$(hostname -A)$(hostname)|g" /etc/hosts
  
