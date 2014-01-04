@@ -36,6 +36,7 @@ xm create -c ${DOMAIN_NAME}
 echo 'blacklist snd-pcsp' >> /etc/modprobe.d/blacklist.conf
 
 # check for updates
+touch /etc/apt/apt.conf.d/10periodic
 if [ $(cat /etc/apt/apt.conf.d/10periodic | grep -c Update-Package-Lists) -eq 0 ]; then
  echo 'APT::Periodic::Update-Package-Lists "1";' >> /etc/apt/apt.conf.d/10periodic
 fi
