@@ -6,7 +6,7 @@ DOMAIN_MAC=00:10:01:01:aa:bb
 DOMAIN_RAM=2Gb
 DOMAIN_HDD=8Gb
  
-# create domU on LVM (for image file use --dir=/root)
+# create domU on LVM (for image file use --dir=/root, --pygrub)
 xen-create-image \
  --hostname=${DOMAIN_NAME} \
  --dist=wheezy \
