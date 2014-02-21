@@ -2,7 +2,7 @@
 
 #
 # TODO
-# use partitions for root /dev/vg0/centos6-data and swap /dev/vg0/centos6-swap insteed of harddisk /dev/vg0/centos6-disk
+# use separate partitions for root (/dev/vg0/centos6-disk) and swap (/dev/vg0/centos6-swap) instead of harddisk image
 
 # create disk
 lvcreate --name centos6-disk --size 8G vg0
