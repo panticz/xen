@@ -1,8 +1,15 @@
 #!/bin/bash
 
 #
+# IP    : dhcp
+# user  : root
+# pass  : t00r
+#
+
+#
 # TODO
 # use separate partitions for root (/dev/vg0/centos6-disk) and swap (/dev/vg0/centos6-swap) instead of harddisk image
+#
 
 # create disk
 lvcreate --name centos6-disk --size 8G vg0
