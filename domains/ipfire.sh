@@ -12,9 +12,14 @@
 wget -q http://downloads.ipfire.org/releases/ipfire-2.x/2.13-core75/ipfire-2.13.xen.i586-downloader-core75.tar.bz2 -O - | tar -C /tmp -xjf -
 bash /tmp/ipfire/xen-image-maker.sh
 
+# fix kernel name and Xen 4.x console output 
 mount /root/ipfire-boot.img /mnt/
 sed -i 's|vmlinuz-3.2.48-ipfire-xen|vmlinuz-3.2.48-ipfire-pae|g' /mnt/grub/grub.conf
 sed -i 's| console=xvc0||g' /mnt/grub/grub.conf
+umount /mnt
+
+# fix Xen 4.x console output
+mount /root/ipfire-root.img /mnt/
 sed -i 's|xvc0|hvc0|g' /mnt/etc/inittab
 umount /mnt
 
