@@ -43,5 +43,8 @@ on_reboot   = 'restart'
 on_crash    = 'restart'
 EOF
 
+# OPTIONAL: add to autostart
+ln -s /etc/xen/centos6 /etc/xen/auto/centos6
+
 # start CenOS 6
 xm create -c centos6
