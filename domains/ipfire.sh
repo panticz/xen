@@ -21,6 +21,7 @@ umount /mnt
 # fix Xen 4.x console output
 mount /root/ipfire-root.img /mnt/
 sed -i 's|xvc0|hvc0|g' /mnt/etc/inittab
+sed -i 's|xvc0|hvc0|g' /mnt/etc/securetty
 umount /mnt
 
 # copy data to lv
