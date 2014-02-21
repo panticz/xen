@@ -15,6 +15,7 @@ bash /tmp/ipfire/xen-image-maker.sh
 mount /root/ipfire-boot.img /mnt/
 sed -i 's|vmlinuz-3.2.48-ipfire-xen|vmlinuz-3.2.48-ipfire-pae|g' /mnt/grub/grub.conf
 sed -i 's| console=xvc0||g' /mnt/grub/grub.conf
+sed -i 's|xvc0|hvc0|g' /mnt/etc/inittab
 umount /mnt
 
 # copy data to lv
