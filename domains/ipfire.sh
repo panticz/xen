@@ -24,6 +24,11 @@ sed -i 's|xvc0|hvc0|g' /mnt/etc/inittab
 sed -i 's|xvc0|hvc0|g' /mnt/etc/securetty
 umount /mnt
 
+# fix wrong nobody user id
+mount /root/ipfire-var.img /mnt/
+find /mnt/ipfire/ -user 65534 -exec chown 99:99 {} \;
+umount /mnt/
+
 # copy data to lv
 mkdir -p /tmp/ipfire/mnt/
 
