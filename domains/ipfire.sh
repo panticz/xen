@@ -6,7 +6,7 @@ URL=http://downloads.ipfire.org/releases/ipfire-2.x/2.15-core79/ipfire-2.15.xen.
 wget -q ${URL} -O - | tar -C /tmp -xjf -
 bash /tmp/ipfire/xen-image-maker.sh
 
-# copy data to lv
+# copy data to lvm
 mkdir -p /tmp/ipfire/mnt/
 
 # copy boot filesystem
@@ -49,7 +49,6 @@ rm -r /tmp/ipfire*
 
 # create xen config file
 cat <<EOF> /etc/xen/fw
-#bootloader = '/usr/lib/xen-default/bin/pygrub'
 bootloader = '/usr/lib/xen-4.1/bin/pygrub'
 memory = 512
 name = "fw"
