@@ -1,6 +1,6 @@
 #!/bin/bash
 
-URL=http://downloads.ipfire.org/releases/ipfire-2.x/2.13-core75/ipfire-2.13.xen.i586-downloader-core75.tar.bz2
+URL=http://downloads.ipfire.org/releases/ipfire-2.x/2.15-core79/ipfire-2.15.xen.i586-downloader-core79.tar.bz2
 
 # download
 wget -q ${URL} -O - | tar -C /tmp -xjf -
