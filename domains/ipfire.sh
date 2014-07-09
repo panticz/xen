@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#URL=http://downloads.ipfire.org/releases/ipfire-2.x/2.13-core73/ipfire-2.13.xen.i586-full-core73.tar.bz2
+URL=http://downloads.ipfire.org/releases/ipfire-2.x/2.13-core75/ipfire-2.13.xen.i586-downloader-core75.tar.bz2
 
 # get ipfire xen image
 #wget ${URL} -P /tmp/
@@ -9,7 +9,7 @@
 #tar xjf /tmp/ipfire-2.*.xen.i586-full-core*.tar.bz2 -C /tmp/
 
 # new version
-wget -q http://downloads.ipfire.org/releases/ipfire-2.x/2.13-core75/ipfire-2.13.xen.i586-downloader-core75.tar.bz2 -O - | tar -C /tmp -xjf -
+wget -q ${URL} -O - | tar -C /tmp -xjf -
 bash /tmp/ipfire/xen-image-maker.sh
 
 # fix kernel name and Xen 4.x console output 
