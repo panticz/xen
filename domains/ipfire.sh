@@ -6,23 +6,6 @@ URL=http://downloads.ipfire.org/releases/ipfire-2.x/2.15-core79/ipfire-2.15.xen.
 wget -q ${URL} -O - | tar -C /tmp -xjf -
 bash /tmp/ipfire/xen-image-maker.sh
 
-# fix kernel name and Xen 4.x console output 
-mount /root/ipfire-boot.img /mnt/
-sed -i 's|vmlinuz-3.2.48-ipfire-xen|vmlinuz-3.2.48-ipfire-pae|g' /mnt/grub/grub.conf
-sed -i 's|xvc0|hvc0|g' /mnt/grub/grub.conf
-umount /mnt
-
-# fix Xen 4.x console output
-mount /root/ipfire-root.img /mnt/
-sed -i 's|xvc0|hvc0|g' /mnt/etc/inittab
-sed -i 's|xvc0|hvc0|g' /mnt/etc/securetty
-umount /mnt
-
-# fix wrong nobody user id
-mount /root/ipfire-var.img /mnt/
-find /mnt/ipfire/ -user 65534 -exec chown 99:99 {} \;
-umount /mnt/
-
 # copy data to lv
 mkdir -p /tmp/ipfire/mnt/
 
