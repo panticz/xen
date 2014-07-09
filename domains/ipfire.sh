@@ -2,13 +2,7 @@
 
 URL=http://downloads.ipfire.org/releases/ipfire-2.x/2.13-core75/ipfire-2.13.xen.i586-downloader-core75.tar.bz2
 
-# get ipfire xen image
-#wget ${URL} -P /tmp/
-
-# extract
-#tar xjf /tmp/ipfire-2.*.xen.i586-full-core*.tar.bz2 -C /tmp/
-
-# new version
+# download
 wget -q ${URL} -O - | tar -C /tmp -xjf -
 bash /tmp/ipfire/xen-image-maker.sh
 
