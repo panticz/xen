@@ -13,7 +13,7 @@ mkdir -p /tmp/ipfire/mnt/
 lvcreate --name fw-boot --size 256M vg0
 mkfs.ext2 /dev/vg0/fw-boot
 #mount /tmp/ipfire/ipfire-boot.img /tmp/ipfire/mnt/ -o loop
-mount ipfire-boot.img /tmp/ipfire/mnt/
+mount ipfire-boot.img /tmp/ipfire/mnt/ -o loop
 mount /dev/vg0/fw-boot /mnt/
 cp -a  /tmp/ipfire/mnt/* /mnt/
 umount /tmp/ipfire/mnt/
@@ -23,7 +23,7 @@ umount /mnt/
 lvcreate --name fw-root --size 2G vg0
 mkfs.ext4 /dev/vg0/fw-root
 #mount /tmp/ipfire/ipfire-root.img /tmp/ipfire/mnt/ -o loop
-mount ipfire-root.img /tmp/ipfire/mnt/
+mount ipfire-root.img /tmp/ipfire/mnt/ -o loop
 mount /dev/vg0/fw-root /mnt/
 cp -a  /tmp/ipfire/mnt/* /mnt/
 umount /tmp/ipfire/mnt/
@@ -33,7 +33,7 @@ umount /mnt/
 lvcreate --name fw-var --size 2G vg0
 mkfs.ext4 /dev/vg0/fw-var
 #mount /tmp/ipfire/ipfire-var.img /tmp/ipfire/mnt/ -o loop
-mount ipfire-var.img /tmp/ipfire/mnt/
+mount ipfire-var.img /tmp/ipfire/mnt/ -o loop
 mount /dev/vg0/fw-var /mnt/
 cp -a  /tmp/ipfire/mnt/* /mnt/
 umount /tmp/ipfire/mnt/
