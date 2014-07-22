@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # configure domU
-DOMAIN_NAME=squezze
+DOMAIN_NAME=squeeze
 DOMAIN_MAC=00:09:01:01:aa:bb
 DOMAIN_RAM=2Gb
 DOMAIN_HDD=8Gb
