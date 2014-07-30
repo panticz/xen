@@ -51,7 +51,7 @@ rm -r /tmp/ipfire*
 cat <<EOF> /etc/xen/fw
 bootloader = '/usr/lib/xen-4.1/bin/pygrub'
 memory = 512
-name = "fw"
+name = 'fw'
 acpi = 1
 apic = 1
 vif = [ 'mac=00:17:4e:be:b1:ba' ]
@@ -61,8 +61,6 @@ disk = [
     'phy:/dev/vg0/fw-root,xvda3,w',
     'phy:/dev/vg0/fw-var,xvda4,w'
 ]
-acpi=1
-apic=1
 pci = ['00:0c.0']
 extra = 'iommu=soft'
 EOF
