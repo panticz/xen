@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # use newest repository
-echo "deb http://archive.ubuntu.com/ubuntu/ trusty main restricted" > /etc/apt/sources.list.d/debootstrap.list
+echo "deb http://archive.ubuntu.com/ubuntu/ vivid main restricted" > /etc/apt/sources.list.d/debootstrap.list
 
 # update
 apt-get update -qq
